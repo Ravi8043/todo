@@ -20,5 +20,5 @@ def todo_list(request):
         todo.save() # Save the new todo to the database and compulsary to write this line
         return redirect('todo_list')   # Redirect to avoid form resubmission
     todos = Todo.objects.all().order_by('-due_date')
-    return render(request, 'todo_list.html')
+    return render(request, 'todo_list.html',{'todos': todos})
 
