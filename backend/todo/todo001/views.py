@@ -4,11 +4,11 @@ from .models import Todo
 from .serializers import TodoSerializer
 
 # Create your views here.
-class todo_list(generics.ListCreateAPIView):
+class TodoList(generics.ListCreateAPIView):
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer
 
 
-class todo_detail(generics.RetrieveUpdateDestroyAPIView):
+class TodoDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer
