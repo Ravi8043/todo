@@ -9,6 +9,8 @@ class Todo(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     due_date = models.DateField(null=True, blank=True)
     priority = models.IntegerField(default=0)
+    tags = models.CharField(max_length=100, blank=True)
+    user = models.ForeignKey('auth.User', on_delete=models.CASCADE, related_name='todos')
 
     def __str__(self):
         return self.title
